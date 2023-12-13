@@ -8,14 +8,14 @@
   <body>
 
     <h1>API Integration:</h1>
-    <form onsubmit="getweather(); return false">
+    <form onsubmit="getWeather(); return false">
     
         <input type="text" id="cityName">
         <button type="submit">Get Weather</button>
     
     </form>
         
-    //hosting a website on express web serever using express.static
+    <!-- //hosting a website on express web serever using express.static
     // 1. create a index.html file.
     // 2. server.mjs, package.json, package-lock.json, .gitignore, node_modules
     // 3. import path from 'path'
@@ -28,14 +28,17 @@
     //    console.log("__dirname:", path.join(__dirname, "/web"))
     // 8. app.get('/', express.static(path.join(__dirname,"/web")))
     //  app.use('/*', express.static(path.join(__dirname,"/web")))
-
+    //  above two lines.. first is for index.html file and 
+    //  second for script js files
+    // port change. 3000 to 5001 -->
 
 
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script>
       //
       let getWeather = () => {
-        let cityName = document.querySelector("#cityName").value;
+      
+      let cityName = document.querySelector("#cityName").value;
 
         let apiUrl = `http://abcd.myapp.cyclic.sh`;
 
