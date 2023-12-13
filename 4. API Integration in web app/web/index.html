@@ -28,8 +28,7 @@
     //    console.log("__dirname:", path.join(__dirname, "/web"))
     // 8. app.get('/', express.static(path.join(__dirname,"/web")))
     //  app.use('/*', express.static(path.join(__dirname,"/web")))
-    //  above two lines.. first is for index.html file and 
-    //  second for script js files
+    //  above two lines.. for running multiple pages
     // port change. 3000 to 5001 -->
 
 
@@ -40,18 +39,17 @@
       
       let cityName = document.querySelector("#cityName").value;
 
-        let apiUrl = `http://abcd.myapp.cyclic.sh`;
+      let apiUrl = `http://abcd.myapp.cyclic.sh`;
 
-        axios
-          .get(apiUrl)
-          .then(function (response) {
+        axios.get(apiUrl)
+        .then(function (response) {
             // handle success
             console.log("response is success");
             console.log(response.data);
 
-            document.querySelector(
-              "#locationName"
-            ).innerHTML = `<h1>${response.data.name}</h1>`;
+            // document.querySelector(
+            //   "#locationName"
+            // ).innerHTML = `<h1>${response.data.name}</h1>`;
            })
           
           
