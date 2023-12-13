@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+  <body>
+
+    <h1>API Integration:</h1>
+    <form onsubmit="getweather(); return false">
+    
+        <input type="text" id="cityName">
+        <button type="submit">Get Weather</button>
+    
+    </form>
+        
+    //hosting a website on express web serever using express.static
+    // 1. create a index.html file.
+    // 2. server.mjs, package.json, package-lock.json, .gitignore, node_modules
+    // 3. import path from 'path'
+    // 4. const __dirname = path.resolve();
+    // 5. add in package.json file 
+    //    ("start"; "node server.mjs")
+    //    ("dev"; "node --watch server.mjs") for auto restarting
+    // 6. in terminal ... write (npm run dev)
+    // 7. console.log("__dirname:", __dirname)
+    //    console.log("__dirname:", path.join(__dirname, "/web"))
+    // 8. app.get('/', express.static(path.join(__dirname,"/web")))
+    //  app.use('/*', express.static(path.join(__dirname,"/web")))
+
+
+
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script>
+      //
+      let getWeather = () => {
+        let cityName = document.querySelector("#cityName").value;
+
+        let apiUrl = `http://abcd.myapp.cyclic.sh`;
+
+        axios
+          .get(apiUrl)
+          .then(function (response) {
+            // handle success
+            console.log("response is success");
+            console.log(response.data);
+
+            document.querySelector(
+              "#locationName"
+            ).innerHTML = `<h1>${response.data.name}</h1>`;
+           })
+          
+          
+             .catch(function (error) {
+            // handle error
+            console.log(error);
+          });
+      };
+  </body>
+</html>
